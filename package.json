@@ -1,20 +1,31 @@
 {
   "name": "bower-components",
   "version": "1.0.0",
-  "description": "",
+  "description": "bower-components ================",
   "main": "index.js",
   "scripts": {
     "test": "lab -m 2000"
   },
-  "author": {
-    "name": "AtuyL",
-    "email": "atuyl.jp@gmail.com"
-  },
+  "author": "AtuyL <atuyl.jp@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "lab": "^4.5.1"
   },
   "dependencies": {
     "glob": "^4.0.6"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AtuyL/bower-components.git"
+  },
+  "keywords": [
+    "bower"
+  ],
+  "bugs": {
+    "url": "https://github.com/AtuyL/bower-components/issues"
+  },
+  "homepage": "https://github.com/AtuyL/bower-components"
 }
