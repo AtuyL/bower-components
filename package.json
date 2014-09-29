@@ -1,0 +1,20 @@
+{
+  "name": "bower-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab -m 2000"
+  },
+  "author": {
+    "name": "AtuyL",
+    "email": "atuyl.jp@gmail.com"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "lab": "^4.5.1"
+  },
+  "dependencies": {
+    "glob": "^4.0.6"
+  }
+}
