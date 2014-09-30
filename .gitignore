@@ -30,3 +30,5 @@ node_modules
 /node_modules
 /.bowerrc
 /bower.json
+/vendor
+/bower_components

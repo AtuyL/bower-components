@@ -1,7 +1,6 @@
 'use strict';
 
 var fs = require('fs'),
-    chalk = require('chalk'),
 
     Lab = require('lab'),
     lab = Lab.script();
@@ -9,18 +8,32 @@ var fs = require('fs'),
 exports.lab = lab;
 
 lab.experiment('glob', function () {
-    var bower_components = require('../lib')({
-        cwd: 'vendor/bower',
-        minified: true
+    lab.test('find-main', function (done) {
+        var bowerComponents = require('../lib')({
+            cwd: 'vendor/bower',
+            minified: false
+        });
+        fs.open(bowerComponents("moment"),'r',done);
     });
-    lab.test('no-options', function (done) {
-        console.info([
-            bower_components('async'),
-            bower_components('greensock'),
-            bower_components('greensock', 'TimelineMax'),
-            bower_components('easeljs'),
-            bower_components('easeljs', 'movieclip')
-        ]);
-        done();
+    lab.test('find-plugin', function (done) {
+        var bowerComponents = require('../lib')({
+            cwd: 'vendor/bower',
+            minified: false
+        });
+        fs.open(bowerComponents("greensock","EasePack"),'r',done);
+    });
+    lab.test('find-main-minified', function (done) {
+        var bowerComponents = require('../lib')({
+            cwd: 'vendor/bower',
+            minified: true
+        });
+        fs.open(bowerComponents("moment"),'r',done);
+    });
+    lab.test('find-plugin-minified', function (done) {
+        var bowerComponents = require('../lib')({
+            cwd: 'vendor/bower',
+            minified: true
+        });
+        fs.open(bowerComponents("greensock","EasePack"),'r',done);
     });
 });
